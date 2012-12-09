@@ -1,0 +1,440 @@
+/*
+Theme Name: UCL Entrepreneurs
+Theme URI: http://ucle.co
+Author: Jon Gjengste
+Author URI: http://thesquareplanet.com/
+Description: Theme for UCL entrepreneurs
+Version: 0.1
+Tags: ucle, dark, gray, orange
+Text Domain: ucle
+*/
+
+html {
+  background: url('http://static.tumblr.com/gcny3qv/RfTm9skbd/broken_noise__1_.png') repeat;
+}
+
+body {
+  color: #222;
+  margin: 0;
+  font-family: arial, sans-serif;
+}
+
+/* Assistive text */
+.assistive-text {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+#access a.assistive-text:active,
+#access a.assistive-text:focus {
+  background: #eee;
+  border-bottom: 1px solid #ddd;
+  color: #1982d1;
+  clip: auto !important;
+  font-size: 12px;
+  position: absolute;
+  text-decoration: underline;
+  top: 0;
+  left: 7.6%;
+}
+
+#wrapper {
+  width: 940px;
+  margin: 0 auto;
+}
+  #header { position: relative; }
+    #header h1, #header h2 { margin: 0; }
+    #header h2 { display: none; }
+    #header h1 a {
+      display: block;
+      text-align: right;
+      padding: 10px;
+      background: white;
+    }
+    #banner {
+      margin: 7px 0;
+      display: inline-block;
+      width: 100%;
+      height: auto;
+    }
+
+  #header .searchform {
+    position: absolute;
+    bottom: .9em;
+    right: .4em;
+    width: 230px;
+  }
+
+  #main-menu .children { display: none; }
+  #main-menu ul {
+    padding: 0;
+    padding-right: 230px;
+    list-style-type: none;
+    background: #E87C35;
+    padding: 1em;
+    margin: 7px 0;
+    margin-top: -4px; /* Vertical space below images */
+  }
+    #main-menu li {
+      display: inline-block;
+    }
+    #main-menu li + li {
+      margin-left: 1.5em;
+    }
+      #main-menu li a {
+        font-weight: bold;
+        color: #222;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+        #main-menu li a:hover {
+          color: white;
+        }
+
+  #content {
+    overflow: hidden;
+    background: white;
+    margin-bottom: 2em;
+  }
+  #secondary {
+    float: right;
+    box-sizing: border-box;
+    width: 22em;
+    background: white;
+  }
+    #secondary h1 {
+      margin-top: 0;
+      font-size: 1.7em;
+    }
+  #primary {
+    margin-right: 22em;
+    padding-top: 1em;
+    border-right: 1px solid #EEE;
+  }
+    .page-title {
+      padding: .5em 1.3em;
+      background: #222;
+      color: #EEE;
+      font-size: 1.6em;
+      margin: 0;
+      margin-bottom: .5em;
+      display: inline-block;
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+
+.page-link {
+  display: block;
+  text-align: center;
+  padding: 1em 0 0;
+  margin-top: 1em;
+  border-top: 1px solid #EEE;
+  font-weight: bold;
+}
+  .singular .page-link { clear: both; }
+  .page-link span {
+    font-weight: normal;
+  }
+  .page-link a { font-weight: normal; }
+
+.nav-page {
+  display: block;
+  border-top: 1px solid #EEE;
+  overflow: hidden;
+  padding: .5em;
+}
+  .nav-page + .hentry {
+    padding-top: 1em;
+  }
+  #nav-single { border-bottom: 1px solid #EEE; }
+  #nav-below { border-top: 1px solid #EEE; }
+  .nav-page .nav-previous,
+  .nav-page .nav-next {
+    float: left;
+  }
+  .nav-page .nav-next {
+    float: right;
+  }
+  .nav-page a {
+    text-decoration: none;
+  }
+
+.more {
+  color: #468 !important;
+}
+
+.hentry {
+  position: relative;
+  padding: 0 2em 0;
+}
+  .hentry.sticky header::before {
+    content: "";
+    position: absolute;
+    top: 2.8em;
+    left: 1em;
+    display: block;
+    background: #E87C35;
+    width: .5em;
+    height: .5em;
+  }
+  .hentry header h1 {
+    font-size: 1.6em;
+    padding: .5em 0 0;
+    margin: 0;
+  }
+  .singular .hentry header h1 {
+    margin-left: -2em;
+    margin-bottom: .3em;
+    background: #222;
+    padding: .5em 2em;
+    display: inline-block;
+    color: #EEE;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+  }
+    .hentry header h1 a {
+      text-decoration: none;
+      color: #222;
+    }
+  .hentry .entry-meta {
+    color: #666;
+    padding-left: .5em;
+    font-size: .9em;
+  }
+    .hentry .entry-meta a {
+      text-decoration: none;
+    }
+    .hentry .entry-meta a:hover,
+    .hentry .entry-meta a:focus {
+      text-decoration: underline;
+    }
+  .hentry .entry-content { }
+    .hentry .entry-content form {
+      text-align: center;
+      padding: 2em 0;
+    }
+  .hentry footer.entry-meta {
+    display: block;
+    text-align: right;
+    margin-top: 1em;
+    padding: 1em 0;
+    border-top: 1px dashed #EEE;
+  }
+  .singular footer.entry-meta { clear: both; }
+
+#comments {
+  border-top: 1px solid #EEE;
+  padding: 2em;
+  padding-top: 1em;
+}
+  .commentlist {
+    list-style-type: none;
+    padding: 0;
+  }
+  .nocomments,
+  .nopassword {
+    text-align: center;
+    font-style: italic;
+  }
+  #comments .edit-link {
+    position: absolute;
+    top: .8em;
+    right: .8em;
+    background: white;
+    border: 1px solid #DDD;
+    font-size: 11px;
+    padding: 4px;
+    border-radius: 3px;
+  }
+
+.pingback {
+  background: #F5F5F5;
+  margin-bottom: 1em;
+  padding: 1em;
+  padding-left: 80px;
+  font-size: .9em;
+  position: relative;
+}
+  .pingback::before {
+    content: "∞";
+    position: absolute;
+    font-size: 40px;
+    line-height: 40px;
+    top: 0px;
+    left: 16px;
+  }
+  .pingback p {
+    margin: 0;
+  }
+
+.comment {
+  background: #F5F5F5;
+  margin-bottom: 1em;
+}
+.comment-author { overflow: hidden; position: relative; }
+  .comment-author img {
+    float: left;
+  }
+  .comment-author .fn {
+    padding-top: 16px;
+    margin-left: 80px; /* 64+16 */
+    display: block;
+  }
+  .comment-author .what {
+    margin-left: 24px;
+    color: #888;
+    font-size: .9em;
+  }
+  .comment-content {
+    border: 1px solid #EEE;
+    border-bottom-color: #F5F5F5;
+    background: white;
+    padding: 1em;
+  }
+    .comment-content p {
+      margin: 0;
+    }
+    .comment-content p + p {
+      margin-top: .5em;
+    }
+  .comment .reply {
+    display: block;
+    padding: .5em;
+    font-size: .8em;
+    text-align: center;
+    background: white;
+    border: 1px solid #EEE;
+    border-top: none;
+  }
+  .comment .children {
+    list-style-type: none;
+    background: white;
+    margin-top: -1em;
+    padding-top: 1em;
+  }
+    .comment .children .comment-author .fn {
+      display: inline-block;
+      padding-left: 8px; /* 32+8 */
+      padding-top: 8px;
+      margin-left: 0;
+    }
+    .comment .children .comment-author .what {
+      margin-left: 0;
+    }
+
+#respond { }
+  #respond .logged-in-as { display: none; }
+  #respond .comment-notes,
+  #respond .comment-form-author,
+  #respond .comment-form-email,
+  #respond .comment-form-url,
+  #respond .comment-form-comment {
+    font-size: .9em;
+    position: relative;
+  }
+    #respond .comment-form-author label,
+    #respond .comment-form-email label,
+    #respond .comment-form-url label,
+    #respond .comment-form-comment label,
+    #respond .comment-form-author input,
+    #respond .comment-form-email input,
+    #respond .comment-form-url input {
+      box-sizing: border-box;
+      display: block;
+      line-height: 16px;
+      padding: .5em;
+      width: 6em;
+      height: 32px;
+      border-radius: 4px;
+    }
+    #respond .comment-form-author label,
+    #respond .comment-form-email label,
+    #respond .comment-form-url label,
+    #respond .comment-form-comment label {
+      position: absolute;
+      left: 1px;
+      top: 1px;
+      height: 30px;
+      background: #FAFAFA;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-right: 1px solid #EEE;
+    }
+    #respond .comment-form-author input,
+    #respond .comment-form-email input,
+    #respond .comment-form-url input {
+      width: 100%;
+      padding-left: 7em;
+      outline: none;
+      border: 1px solid #EEE;
+      background: white;
+    }
+      #respond .comment-form-author input:focus,
+      #respond .comment-form-email input:focus,
+      #respond .comment-form-url input:focus,
+      #respond .comment-form-comment textarea:focus {
+        border-color: #E87C35;
+      }
+    #respond .required {
+      color: red;
+      position: absolute;
+      right: .5em;
+      top: .5em;
+    }
+    #respond .comment-notes .required {
+      position: static;
+    }
+  #respond .comment-form-comment label {
+    height: 198px;
+  }
+  #respond textarea {
+    box-sizing: border-box;
+    width: 100%;
+    height: 200px;
+    padding: .5em;
+    padding-left: 7em;
+    border: 1px solid #EEE;
+    border-radius: 4px;
+    background: white;
+  }
+  #respond .form-allowed-tags {
+    font-size: .9em;
+    color: #888;
+  }
+    #respond .form-allowed-tags code {
+      font-size: .9em;
+    }
+  #respond .form-submit {
+    text-align: right;
+  }
+
+.widget {
+  border-bottom: 1px solid #EEE;
+}
+  .widget h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 1em 1em 0;
+    text-transform: uppercase;
+  }
+  .widget form {
+    padding: 1em;
+    text-align: center;
+  }
+  .textwidget {
+    padding: 1em;
+  }
+    .widget h3 + .textwidget {
+      padding: 0 1em;
+    }
+  .widget ul {
+    padding: 0 2.5em;
+    list-style-type: square;
+    font-size: .9em;
+  }
+    .widget ul li {
+      line-height: 1.5;
+    }
+.widget:nth-child(2n) {
+  background: #FAFAFA;
+}

@@ -1,0 +1,60 @@
+/*
+Theme Name: UCL Entrepreneurs
+Description: Used to style the TinyMCE editor.
+*/
+
+html .mceContentBody {
+	max-width: 575px;
+  font-family: arial, sans-serif;
+  color: #222;
+}
+
+a {
+  color: #468;
+  text-decoration: none;
+}
+a:visited {
+  color: #024;
+}
+a:hover, a:focus {
+  color: #E2762F;
+  text-decoration: underline;
+}
+
+/** images **/
+  .size-full {
+    display: inline-block;
+    box-sizing: border-box;
+    max-width: 100%;
+    height: auto;
+  }
+  .aligncenter {
+    display: block;
+    margin: 1em auto;
+  }
+  .alignnone {
+    padding: .5em;
+  }
+  .alignleft {
+    float: left;
+    margin: 1em;
+    margin-left: 0;
+  }
+  .alignright {
+    float: right;
+    margin: 1em;
+    margin-right: 0;
+  }
+  .wp-caption {
+    border: 1px solid #EEE;
+    padding: 5px 0;
+    text-align: center;
+  }
+    .wp-caption-text {
+      display: block;
+      box-sizing: border-box;
+      text-align: left;
+      margin: 0;
+      padding: 5px 10px;
+      font-size: .85em;
+    }
