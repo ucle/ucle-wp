@@ -6,11 +6,12 @@
  */
 ?>
 
-  </div><!-- #main -->
+  </div>
 
-  <footer id="colophon" role="contentinfo">
-  </footer><!-- #colophon -->
-</div><!-- #page -->
+  <footer id="footer">
+    <p>UCL Entrepreneurs Society &copy; 2012-<?php echo date('Y'); ?></p>
+  </footer>
+</div>
 
 <?php wp_footer(); ?>
 

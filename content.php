@@ -48,7 +48,7 @@
     <?php if ( $show_sep ) : ?>
     <span class="sep"> | </span>
     <?php endif; // End if $show_sep ?>
-    <span class="comments-link"><?php comments_popup_link( '<span class="leave-reply">' . 'Leave a reply' . '</span>', '<b>1</b> Reply', '<b>%</b> Replies' ); ?></span>
+    <span class="comments-link"><?php comments_popup_link( 'Leave a reply', '<b>1</b> Reply', '<b>%</b> Replies' ); ?></span>
     <?php endif; // End if comments_open() ?>
 
     <?php edit_post_link( 'Edit', '&mdash; <span class="edit-link">', '</span>' ); ?>
