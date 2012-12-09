@@ -11,12 +11,14 @@ Text Domain: ucle
 
 html {
   background: url('http://static.tumblr.com/gcny3qv/RfTm9skbd/broken_noise__1_.png') repeat;
+  padding-bottom: 70%;
 }
 
 body {
   color: #222;
   margin: 0;
   font-family: arial, sans-serif;
+  font-size: 15px;
 }
 
 /* Assistive text */
