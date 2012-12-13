@@ -15,7 +15,7 @@
         </aside>
 
         <aside id="meta" class="widget">
-          <h3 class="widget-title">Meta/h3>
+          <h3 class="widget-title">Meta</h3>
           <ul>
             <?php wp_register(); ?>
             <li><?php wp_loginout(); ?></li>
@@ -23,5 +23,7 @@
           </ul>
         </aside>
 
+      <?php else: ?>
+        <?php dynamic_sidebar( 'sidebar-1' ); ?>
       <?php endif; // end sidebar widget area ?>
     </div><!-- #secondary .widget-area -->

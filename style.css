@@ -45,28 +45,36 @@ body {
   margin: 0 auto;
 }
   #header { position: relative; }
+    #header hgroup {
+      background: white;
+      overflow: hidden;
+    }
+    #banner {
+      display: none;
+      max-width: 50%;
+      height: auto;
+      border: 7px solid #222;
+      border-left: none;
+      margin-top: 1.9em;
+    }
     #header h1, #header h2 { margin: 0; }
     #header h2 { display: none; }
+    #header h1 {
+      width: 40%;
+    }
     #header h1 a {
       display: block;
-      text-align: left;
       padding: 10px;
-      background: white;
       position: relative;
       z-index: 5;
     }
       #header h1 img {
-        max-width: 40%;
+        max-width: 100%;
       }
-    #banner {
-      margin: 7px 0;
-      width: 100%;
-      height: auto;
-      display: none;
-    }
     @media all and (min-width: 940px) {
+      #header h1 { float: right; }
       #header h1 a { text-align: right; }
-      #banner { display: inline-block; }
+      #banner { display: block; }
     }
 
   #header .searchform {
@@ -78,13 +86,12 @@ body {
   @media all and (min-width: 27em) {
     #header .searchform {
       position: relative;
-      top: -3em;
+      top: -32px;
+      right: 1em;
       z-index: 10;
       padding: 0;
-      padding-right: 1em;
       background: none;
       margin-top: 0;
-      height: 1em;
     }
   }
   @media all and (min-width: 940px) {
@@ -93,8 +100,7 @@ body {
       top: auto;
       left: auto;
       bottom: .9em;
-      right: .4em;
-      width: 230px;
+      right: 16px;
       padding: 0;
       margin: 0;
       height: auto;
@@ -111,19 +117,14 @@ body {
     letter-spacing: -4px;
     word-spacing: -4px;
   }
-    @media all and (min-width: 27em) {
+    @media all and (min-width: 39em) {
       #main-menu ul {
-        position: relative;
-        top: 7px;
-        margin-top: -1em;
-        margin-bottom: 14px;
+        margin-top: -14px;
       }
     }
     @media all and (min-width: 940px) {
       #main-menu ul {
-        top: auto;
-        margin-top: -4px; /* Vertical space below images */
-        margin-bottom: 7px;
+        margin-top: 7px;
       }
     }
     #main-menu li {
@@ -132,9 +133,13 @@ body {
       word-spacing: normal;
       font-size: .9em;
     }
-    @media all and (min-width: 50em) {
+    @media all and (min-width: 39em) {
       #main-menu li {
         display: inline-block;
+      }
+    }
+    @media all and (min-width: 50em) {
+      #main-menu li {
         font-size: 1em;
       }
     }
@@ -143,9 +148,19 @@ body {
         font-weight: bold;
         color: #111;
         text-decoration: none;
-        text-transform: uppercase;
-        padding: 1em 2em;
         border-right: 7px solid #222;
+        padding: .5em 1em;
+      }
+      @media all and (min-width: 39em) {
+        #main-menu li a {
+          padding: 1em;
+          text-transform: uppercase;
+        }
+      }
+      @media all and (min-width: 47em) {
+        #main-menu li a {
+          padding: 1em 2em;
+        }
       }
       #main-menu .current-menu-item a {
         background: #222 !important;
@@ -174,7 +189,7 @@ body {
     padding-top: 1em;
     border-right: 1px solid #EEE;
   }
-    @media all and (min-width: 40em) {
+    @media all and (min-width: 45em) {
       #secondary {
         display: block;
       }
@@ -182,7 +197,7 @@ body {
         margin-right: 15em;
       }
     }
-    @media all and (min-width: 50em) {
+    @media all and (min-width: 60em) {
       #secondary {
         width: 22em;
       }
@@ -196,6 +211,7 @@ body {
       color: #EEE;
       font-size: 1.6em;
       margin: 0;
+      border-top: 2px solid #111;
       margin-bottom: .5em;
       display: inline-block;
       border-top-right-radius: 3px;
@@ -209,6 +225,33 @@ body {
     font-size: .9em;
     text-align: center;
   }
+
+.searchform {
+  height: 22px;
+}
+  .searchform .field,
+  .searchform .submit {
+    box-sizing: content-box;
+    padding: 3px;
+    border: 1px solid #DDD;
+    font-size: 12px;
+    line-height: 14px;
+    margin: 0;
+  }
+  .searchform .field {
+    background: white;
+    width: 160px;
+    color: #444;
+  }
+  .searchform .submit {
+    display: inline-block;
+    background: #222;
+    color: #EEE;
+    border-color: #111;
+  }
+
+  /* Because Firefox can't use borders like everyone else */
+  .submit::-moz-focus-inner {border:0;}
 
 .page-link {
   display: block;
@@ -272,6 +315,7 @@ body {
     padding: .5em 2em;
     display: inline-block;
     color: #EEE;
+    border-top: 2px solid #111;
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
   }

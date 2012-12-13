@@ -7,7 +7,7 @@ get_header();
 get_sidebar(); ?>
 
     <section id="primary">
-      <div role="main">
+      <div id="content" role="main">
 
       <?php if ( have_posts() ) : ?>
 
@@ -28,11 +28,8 @@ get_sidebar(); ?>
 
         <?php ucle_content_nav( 'nav-below' ); ?>
       <?php else : ?>
-        <article id="post-0" class="post no-results not-found">
-          <header class="entry-header">
-            <h1 class="entry-title">Nothing Found</h1>
-          </header><!-- .entry-header -->
-
+        <h1 class="page-title">Nothing found</h1>
+        <article id="post-0" class="post hentry no-results not-found">
           <div class="entry-content">
             <?php if ( $header == 'search' ): ?>
               <p>Sorry, but nothing matched your search criteria. Please try again with some different keywords.</p>

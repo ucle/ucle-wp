@@ -77,33 +77,34 @@ function ucle_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'ucle_excerpt_length' );
 
 /**
- * Returns a "Continue Reading" link for excerpts
- */
-function ucle_continue_reading_link() {
-  return ' <a class="more" href="'. esc_url( get_permalink() ) . '">' . 'Continue reading <span class="meta-nav">&rarr;</span>' . '</a>';
-}
-
-/**
- * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and ucle_continue_reading_link().
- */
-function ucle_auto_excerpt_more( $more ) {
-  return ' &hellip;' . ucle_continue_reading_link();
-}
-add_filter( 'excerpt_more', 'ucle_auto_excerpt_more' );
-
-/**
- * Adds a pretty "Continue Reading" link to custom post excerpts.
+ * Creates a nicely formatted and more specific title element text
+ * for output in head of document, based on current view.
  *
- * To override this link in a child theme, remove the filter and add your own
- * function tied to the get_the_excerpt filter hook.
+ * @param string $title Default title text for current view.
+ * @param string $sep Optional separator.
+ * @return string Filtered title.
  */
-function ucle_custom_excerpt_more( $output ) {
-  if ( has_excerpt() && ! is_attachment() ) {
-    $output .= ucle_continue_reading_link();
-  }
-  return $output;
+function ucle_wp_title( $title, $sep ) {
+  global $paged, $page;
+
+  if ( is_feed() )
+    return $title;
+
+  // Add the site name.
+  $title .= get_bloginfo( 'name' );
+
+  // Add the site description for the home/front page.
+  $site_description = get_bloginfo( 'description', 'display' );
+  if ( $site_description && ( is_home() || is_front_page() ) )
+    $title = "$title $sep $site_description";
+
+  // Add a page number if necessary.
+  if ( $paged >= 2 || $page >= 2 )
+    $title = "$title $sep " . sprintf( 'Page %s', max( $paged, $page ) );
+
+  return $title;
 }
-add_filter( 'get_the_excerpt', 'ucle_custom_excerpt_more' );
+add_filter( 'wp_title', 'ucle_wp_title', 10, 2 );
 
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
@@ -138,7 +139,7 @@ function ucle_content_nav( $nav_id ) {
   global $wp_query;
 
   if ( $wp_query->max_num_pages > 1 ) : ?>
-    <nav id="<?php echo $nav_id; ?>" class="nav-page">
+    <nav id="<?php echo esc_attr($nav_id); ?>" class="nav-page">
       <h3 class="assistive-text">Post navigation</h3>
       <div class="nav-previous"><?php next_posts_link( '<span class="meta-nav">&larr;</span> Older posts' ); ?></div>
       <div class="nav-next"><?php previous_posts_link( 'Newer posts <span class="meta-nav">&rarr;</span>' ); ?></div>
@@ -159,15 +160,16 @@ function ucle_comment( $comment, $args, $depth ) {
     case 'pingback' :
     case 'trackback' :
   ?>
-  <li class="post pingback">
+  <li <?php comment_class('pingback'); ?>>
     <p>Pingback: <?php comment_author_link(); ?><?php edit_comment_link( 'Edit', '<span class="edit-link">', '</span>' ); ?></p>
   <?php
       break;
     default :
+    global $post;
   ?>
   <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-    <article id="comment-<?php comment_ID(); ?>" class="comment">
-      <footer class="comment-meta">
+    <article id="comment-<?php comment_ID(); ?>" class="comment <?php echo ( $comment->user_id === $post->post_author ) ? 'by-author' : ''; ?>">
+      <header class="comment-meta">
         <div class="comment-author vcard">
           <?php
             $avatar_size = 64;
@@ -194,7 +196,7 @@ function ucle_comment( $comment, $args, $depth ) {
           <br />
         <?php endif; ?>
 
-      </footer>
+      </header>
 
       <div class="comment-content"><?php comment_text(); ?></div>
 
@@ -211,19 +213,44 @@ function ucle_comment( $comment, $args, $depth ) {
 }
 endif;
 
-if ( ! function_exists( 'ucle_posted_on' ) ) :
+if ( ! function_exists( 'ucle_entry_meta' ) ) :
 /**
- * Prints HTML with meta information for the current post-date/time and author.
+ * Prints HTML with meta information for current post: categories, tags, permalink, author, and date.
  */
-function ucle_posted_on() {
-  printf( '<span class="sep">posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>',
+function ucle_entry_meta() {
+  // Translators: used between list items, there is a space after the comma.
+  $categories_list = get_the_category_list( ', ' );
+
+  // Translators: used between list items, there is a space after the comma.
+  $tag_list = get_the_tag_list( '', ', ' );
+
+  $date = sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>',
     esc_url( get_permalink() ),
     esc_attr( get_the_time() ),
     esc_attr( get_the_date( 'c' ) ),
-    esc_html( get_the_date() ),
+    esc_html( get_the_date() )
+  );
+
+  $author = sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
     esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
     esc_attr( sprintf( 'View all posts by %s', get_the_author() ) ),
     get_the_author()
+  );
+
+  if ( $tag_list ) {
+    $utility_text = 'This entry was posted in %1$s and tagged %2$s on %3$s<span class="by-author"> by %4$s</span>.';
+  } elseif ( $categories_list ) {
+    $utility_text = 'This entry was posted in %1$s on %3$s<span class="by-author"> by %4$s</span>.';
+  } else {
+    $utility_text = 'This entry was posted on %3$s<span class="by-author"> by %4$s</span>.';
+  }
+
+  printf(
+    $utility_text,
+    $categories_list,
+    $tag_list,
+    $date,
+    $author
   );
 }
 endif;
