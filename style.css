@@ -17,8 +17,11 @@ html {
 body {
   color: #222;
   margin: 0;
-  font-family: arial, sans-serif;
+  font-family: 'Helvetica Neue', arial, sans-serif;
   font-size: 15px;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Open Sans', arial, sans-serif;
 }
 
 /* Assistive text */
@@ -53,7 +56,7 @@ body {
       display: none;
       max-width: 50%;
       height: auto;
-      border: 7px solid #222;
+      border: 3px solid #222;
       border-left: none;
       margin-top: 1.9em;
     }
@@ -80,7 +83,7 @@ body {
   #header .searchform {
     padding: .5em;
     background: #FA862F;
-    margin-top: 7px;
+    margin-top: 3px;
     text-align: right;
   }
   @media all and (min-width: 27em) {
@@ -113,7 +116,7 @@ body {
     padding: 0;
     list-style-type: none;
     background: #FA862F;
-    margin: 7px 0;
+    margin: 3px 0;
     letter-spacing: -4px;
     word-spacing: -4px;
   }
@@ -124,7 +127,7 @@ body {
     }
     @media all and (min-width: 940px) {
       #main-menu ul {
-        margin-top: 7px;
+        margin-top: 3px;
       }
     }
     #main-menu li {
@@ -148,7 +151,7 @@ body {
         font-weight: bold;
         color: #111;
         text-decoration: none;
-        border-right: 7px solid #222;
+        border-right: 3px solid #222;
         padding: .5em 1em;
       }
       @media all and (min-width: 39em) {
@@ -167,7 +170,7 @@ body {
         color: #EEE;
       }
         #main-menu li a:hover {
-          background: #D2661F;
+          color: #FFF;
         }
 
   #content {
@@ -218,7 +221,7 @@ body {
       border-bottom-right-radius: 3px;
     }
   #footer {
-    margin-top: 7px;
+    margin-top: 3px;
     padding: 1em;
     background: white;
     background: #FA862F;
