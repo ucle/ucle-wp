@@ -274,7 +274,7 @@ h1,h2,h3,h4,h5,h6 {
   display: block;
   border-top: 1px solid #EEE;
   overflow: hidden;
-  padding: .5em;
+  padding: 1em;
 }
   .nav-page + .hentry {
     padding-top: 1em;
@@ -284,6 +284,7 @@ h1,h2,h3,h4,h5,h6 {
   .nav-page .nav-previous,
   .nav-page .nav-next {
     float: left;
+    font-size: .9em;
   }
   .nav-page .nav-next {
     float: right;
