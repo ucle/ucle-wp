@@ -7,13 +7,6 @@
     <div id="secondary" class="widget-area" role="complementary">
       <?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
 
-        <aside id="archives" class="widget">
-          <h3 class="widget-title">Archives</h3>
-          <ul>
-            <?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
-          </ul>
-        </aside>
-
         <aside id="meta" class="widget">
           <h3 class="widget-title">Meta</h3>
           <ul>
@@ -22,8 +15,5 @@
             <?php wp_meta(); ?>
           </ul>
         </aside>
-
-      <?php else: ?>
-        <?php dynamic_sidebar( 'sidebar-1' ); ?>
       <?php endif; // end sidebar widget area ?>
     </div><!-- #secondary .widget-area -->

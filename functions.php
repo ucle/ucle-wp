@@ -218,10 +218,7 @@ if ( ! function_exists( 'ucle_entry_meta' ) ) :
  * Prints HTML with meta information for current post: categories, tags, permalink, author, and date.
  */
 function ucle_entry_meta() {
-  // Translators: used between list items, there is a space after the comma.
-  $categories_list = get_the_category_list( ', ' );
-
-  // Translators: used between list items, there is a space after the comma.
+  //$categories_list = get_the_category_list( ', ' );
   $tag_list = get_the_tag_list( '', ', ' );
 
   $date = sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>',
@@ -238,16 +235,13 @@ function ucle_entry_meta() {
   );
 
   if ( $tag_list ) {
-    $utility_text = 'This entry was posted in %1$s and tagged %2$s on %3$s<span class="by-author"> by %4$s</span>.';
-  } elseif ( $categories_list ) {
-    $utility_text = 'This entry was posted in %1$s on %3$s<span class="by-author"> by %4$s</span>.';
+    $utility_text = 'This entry was posted on %2$s<span class="by-author"> by %3$s</span> and tagged %1$s.';
   } else {
-    $utility_text = 'This entry was posted on %3$s<span class="by-author"> by %4$s</span>.';
+    $utility_text = 'This entry was posted on %2$s<span class="by-author"> by %3$s</span>.';
   }
 
   printf(
     $utility_text,
-    $categories_list,
     $tag_list,
     $date,
     $author
