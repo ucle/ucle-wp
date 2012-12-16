@@ -1,7 +1,7 @@
 /*
 Theme Name: UCL Entrepreneurs
 Theme URI: http://ucle.co
-Author: Jon Gjengste
+Author: Jon Gjengset
 Author URI: http://thesquareplanet.com/
 Description: Theme for UCL entrepreneurs
 Version: 0.1
@@ -40,7 +40,6 @@ input[type="search"] {
   margin-bottom: 0 !important;
 }
 .slideshow {
-  border-bottom: 2px solid #222;
   background: #222;
 }
 .slideshow .slide a {
@@ -134,7 +133,6 @@ input[type="search"] {
   #header .searchform {
     padding: .5em;
     background: #FA862F;
-    margin-top: 2px;
     text-align: right;
   }
   @media all and (min-width: 27em) {
@@ -167,18 +165,18 @@ input[type="search"] {
     padding: 0;
     list-style-type: none;
     background: #FA862F;
-    margin: 2px 0;
+    margin: 0;
     letter-spacing: -4px;
     word-spacing: -4px;
   }
     @media all and (min-width: 27em) {
       #main-menu ul {
-        margin-top: -20px; /* 22 - 2 */
+        margin-top: -22px; /* 22 - 0 */
       }
     }
     @media all and (min-width: 940px) {
       #main-menu ul {
-        margin-top: 2px;
+        margin-top: 0;
       }
     }
     #main-menu li {
@@ -202,18 +200,12 @@ input[type="search"] {
         font-weight: bold;
         color: #111;
         text-decoration: none;
-        border-right: 2px solid #222;
         padding: .5em 1em;
       }
       @media all and (min-width: 39em) {
         #main-menu li a {
           padding: 1em;
           text-transform: uppercase;
-        }
-      }
-      @media all and (min-width: 47em) {
-        #main-menu li a {
-          padding: 1em 2em;
         }
       }
       #main-menu .current-menu-item a {
@@ -272,7 +264,6 @@ input[type="search"] {
       border-bottom-right-radius: 2px;
     }
   #footer {
-    margin-top: 2px;
     padding: 1em;
     background: white;
     background: #FA862F;
