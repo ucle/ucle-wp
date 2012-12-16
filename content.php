@@ -6,14 +6,17 @@
 
   <article id="post-<?php the_ID(); ?>" <?php post_class(is_sticky() ? "featured" : ""); ?>>
     <header class="entry-header">
-      <?php the_post_thumbnail(); ?>
       <?php $title = get_the_title() ? get_the_title() : "&laquo;Untitled&raquo;"; ?>
       <?php if ( is_single() ) : ?>
       <h1 class="entry-title"><?php echo $title; ?></h1>
+      <?php the_post_thumbnail(array(549,9999)); ?>
       <?php else : ?>
       <h1 class="entry-title">
         <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( 'Permalink to %s', the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php echo $title; ?></a>
       </h1>
+      <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+        <?php the_post_thumbnail(); ?>
+      </a>
       <?php endif; // is_single() ?>
     </header><!-- .entry-header -->
 

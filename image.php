@@ -17,7 +17,7 @@ get_header(); ?>
             <footer class="entry-meta">
               <?php
                 $metadata = wp_get_attachment_metadata();
-                printf( '<span class="meta-prep meta-prep-entry-date">Published </span> <span class="entry-date"><time class="entry-date" datetime="%1$s">%2$s</time></span> at <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%8$s</a>.',
+                printf( '<span class="meta-prep meta-prep-entry-date">Published </span> <span class="entry-date"><time class="entry-date" datetime="%1$s">%2$s</time></span> in <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%8$s</a>.',
                   esc_attr( get_the_date( 'c' ) ),
                   esc_html( get_the_date() ),
                   esc_url( wp_get_attachment_url() ),
@@ -31,10 +31,6 @@ get_header(); ?>
               <?php edit_post_link( 'Edit', '<span class="edit-link">', '</span>' ); ?>
             </footer><!-- .entry-meta -->
 
-            <nav id="image-navigation" class="navigation" role="navigation">
-              <span class="previous-image"><?php previous_image_link( false, '&larr; Previous' ); ?></span>
-              <span class="next-image"><?php next_image_link( false, 'Next &rarr;' ); ?></span>
-            </nav><!-- #image-navigation -->
           </header><!-- .entry-header -->
 
           <div class="entry-content">
