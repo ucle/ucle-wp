@@ -65,6 +65,24 @@ input[type="search"] {
     font-size: .85em;
   }
 }
+.slideshow .responsive-slider.flexslider .flex-control-nav li a {
+  border: 2px solid #FFF;
+  background: #FFF !important;
+  border-radius: 5px;
+  width: 6px !important;
+  height: 6px !important;
+}
+.slideshow .responsive-slider.flexslider .flex-control-nav li a:hover,
+.slideshow .responsive-slider.flexslider .flex-control-nav li a.active {
+  background: none !important;
+}
+@media all and (min-width: 50em) {
+  .slideshow .responsive-slider.flexslider .flex-control-nav li a {
+    border-radius: 7px;
+    width: 10px !important;
+    height: 10px !important;
+  }
+}
 
 /* Assistive text */
 .assistive-text {
