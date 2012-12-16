@@ -395,6 +395,9 @@ input[type="search"] {
       text-align: center;
       padding: 2em 0;
     }
+    .hentry .entry-content .wpcf7-form {
+      padding: 0;
+    }
   .hentry footer.entry-meta {
     display: block;
     text-align: right;
@@ -506,21 +509,14 @@ input[type="search"] {
 
 #respond { }
   #respond .logged-in-as { display: none; }
-  #respond .comment-notes,
-  #respond .comment-form-author,
-  #respond .comment-form-email,
-  #respond .comment-form-url,
-  #respond .comment-form-comment {
+
+  form p {
     font-size: .9em;
     position: relative;
   }
-    #respond .comment-form-author label,
-    #respond .comment-form-email label,
-    #respond .comment-form-url label,
-    #respond .comment-form-comment label,
-    #respond .comment-form-author input,
-    #respond .comment-form-email input,
-    #respond .comment-form-url input {
+    form label,
+    form input[type="text"],
+    form input[type="email"] {
       box-sizing: border-box;
       display: block;
       line-height: 16px;
@@ -528,11 +524,9 @@ input[type="search"] {
       width: 6em;
       height: 32px;
       border-radius: 4px;
+      text-align: left;
     }
-    #respond .comment-form-author label,
-    #respond .comment-form-email label,
-    #respond .comment-form-url label,
-    #respond .comment-form-comment label {
+    form label {
       position: absolute;
       left: 1px;
       top: 1px;
@@ -541,23 +535,41 @@ input[type="search"] {
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
       border-right: 1px solid #EEE;
+      z-index: 50;
     }
-    #respond .comment-form-author input,
-    #respond .comment-form-email input,
-    #respond .comment-form-url input {
+    .wpcf7-not-valid-tip-no-ajax {
+      padding-top: .5em;
+    }
+    .wpcf7-not-valid-tip {
+      height: 30px;
+      line-height: 30px;
+      padding: 0 !important;
+      background: #FAFAFA !important;
+      border: 1px solid #EEE !important;
+      color: #D44;
+    }
+    .wpcf7-response-output {
+      padding: 1em !important;
+      color: #444;
+      font-size: .85em;
+    }
+    .wpcf7-validation-errors {
+      border: 1px solid #D44 !important;
+    }
+    form input[type="text"],
+    form input[type="email"] {
       width: 100%;
       padding-left: 7em;
       outline: none;
       border: 1px solid #EEE;
       background: white;
     }
-      #respond .comment-form-author input:focus,
-      #respond .comment-form-email input:focus,
-      #respond .comment-form-url input:focus,
-      #respond .comment-form-comment textarea:focus {
+      form textarea:focus:
+      form input[type="text"]:focus,
+      form input[type="email"]:focus {
         border-color: #FA862F;
       }
-    #respond .required {
+    form .required {
       color: red;
       position: absolute;
       right: .5em;
@@ -566,10 +578,12 @@ input[type="search"] {
     #respond .comment-notes .required {
       position: static;
     }
-  #respond .comment-form-comment label {
+  #respond .comment-form-comment label,
+  .textarea label {
     height: 198px;
   }
-  #respond textarea {
+  #respond textarea,
+  .textarea textarea {
     box-sizing: border-box;
     width: 100%;
     height: 200px;
@@ -586,7 +600,7 @@ input[type="search"] {
     #respond .form-allowed-tags code {
       font-size: .9em;
     }
-  #respond .form-submit {
+  .form-submit {
     text-align: right;
   }
 
