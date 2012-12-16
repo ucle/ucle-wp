@@ -265,11 +265,36 @@ input[type="search"] {
     }
   #footer {
     padding: 1em;
-    background: white;
     background: #FA862F;
-    font-size: .9em;
-    text-align: center;
+    font-size: 13px;
+    line-height: 24px;
+    color: white;
   }
+    #footer p { margin: 0; font-weight: bold; }
+    #footer .icon {
+      float: right;
+      display: inline-block;
+      border-radius: 6px;
+      padding: 3px;
+      margin-top: -3px;
+      margin-left: .5em;
+    }
+    #footer .twitter:hover,
+    #footer .twitter:focus {
+      background: #33CCFF;
+    }
+    #footer .facebook:hover,
+    #footer .facebook:focus {
+      background: #3B5998;
+    }
+    #footer .linkedin:hover,
+    #footer .linkedin:focus {
+      background: #4875B4;
+    }
+    #footer .icon img {
+      border: none;
+      vertical-align: top;
+    }
 
 .searchform {
   height: 22px;
