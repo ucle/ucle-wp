@@ -121,7 +121,7 @@ add_filter( 'wp_page_menu_args', 'ucle_page_menu_args' );
 function ucle_widgets_init() {
 
   register_sidebar( array(
-    'name' => __( 'Main Sidebar', 'twentyeleven' ),
+    'name' => 'Main Sidebar',
     'id' => 'sidebar-1',
     'before_widget' => '<aside id="%1$s" class="widget %2$s">',
     'after_widget' => "</aside>",

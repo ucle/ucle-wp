@@ -24,6 +24,36 @@ h1,h2,h3,h4,h5,h6 {
   font-family: 'Open Sans', arial, sans-serif;
 }
 
+.responsive-slider.flexslider {
+  margin-bottom: 0 !important;
+}
+.slideshow {
+  border-bottom: 3px solid #222;
+  background: #222;
+}
+.slideshow .slide a {
+  display: block;
+  max-height: 320px;
+  overflow: hidden;
+}
+.slideshow .slide img {
+  width: 100%;
+  height: auto;
+}
+#content .slideshow .slide-title a {
+  font-size: .7em;
+}
+@media all and (min-width: 40em) {
+  #content .slideshow .slide-title a {
+    font-size: .8em;
+  }
+}
+@media all and (min-width: 50em) {
+  #content .slideshow .slide-title a {
+    font-size: .85em;
+  }
+}
+
 /* Assistive text */
 .assistive-text {
   position: absolute !important;
@@ -120,9 +150,9 @@ h1,h2,h3,h4,h5,h6 {
     letter-spacing: -4px;
     word-spacing: -4px;
   }
-    @media all and (min-width: 39em) {
+    @media all and (min-width: 27em) {
       #main-menu ul {
-        margin-top: -14px;
+        margin-top: -19px; /* 22 - 3 */
       }
     }
     @media all and (min-width: 940px) {

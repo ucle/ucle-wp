@@ -4,6 +4,11 @@
  */
 
 get_header();
+if ( is_home() ) {
+  ?><div class="slideshow"><?php
+  do_shortcode( '[responsive_slider]' )
+  ?></div><?php
+}
 get_sidebar(); ?>
 
     <section id="primary">
