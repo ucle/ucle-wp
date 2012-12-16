@@ -40,7 +40,7 @@ input[type="search"] {
   margin-bottom: 0 !important;
 }
 .slideshow {
-  border-bottom: 3px solid #222;
+  border-bottom: 2px solid #222;
   background: #222;
 }
 .slideshow .slide a {
@@ -116,7 +116,7 @@ input[type="search"] {
   #header .searchform {
     padding: .5em;
     background: #FA862F;
-    margin-top: 3px;
+    margin-top: 2px;
     text-align: right;
   }
   @media all and (min-width: 27em) {
@@ -149,18 +149,18 @@ input[type="search"] {
     padding: 0;
     list-style-type: none;
     background: #FA862F;
-    margin: 3px 0;
+    margin: 2px 0;
     letter-spacing: -4px;
     word-spacing: -4px;
   }
     @media all and (min-width: 27em) {
       #main-menu ul {
-        margin-top: -19px; /* 22 - 3 */
+        margin-top: -20px; /* 22 - 2 */
       }
     }
     @media all and (min-width: 940px) {
       #main-menu ul {
-        margin-top: 3px;
+        margin-top: 2px;
       }
     }
     #main-menu li {
@@ -184,7 +184,7 @@ input[type="search"] {
         font-weight: bold;
         color: #111;
         text-decoration: none;
-        border-right: 3px solid #222;
+        border-right: 2px solid #222;
         padding: .5em 1em;
       }
       @media all and (min-width: 39em) {
@@ -250,11 +250,11 @@ input[type="search"] {
       border-top: 2px solid #111;
       margin-bottom: .5em;
       display: inline-block;
-      border-top-right-radius: 3px;
-      border-bottom-right-radius: 3px;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
     }
   #footer {
-    margin-top: 3px;
+    margin-top: 2px;
     padding: 1em;
     background: white;
     background: #FA862F;
@@ -341,9 +341,9 @@ input[type="search"] {
     height: .5em;
   }
   .hentry .wp-post-image {
-    border: 3px solid #222;
-    border-radius: 3px;
-    margin-left: -3px;
+    border: 2px solid #222;
+    border-radius: 2px;
+    margin-left: -2px;
     margin-top: 1em;
     width: 100%;
     height: auto;
@@ -362,8 +362,8 @@ input[type="search"] {
     display: inline-block;
     color: #EEE;
     border-top: 2px solid #111;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
   }
     .hentry header h1 a {
       text-decoration: none;
@@ -417,7 +417,7 @@ input[type="search"] {
     border: 1px solid #DDD;
     font-size: 11px;
     padding: 4px;
-    border-radius: 3px;
+    border-radius: 2px;
   }
 
 .pingback {
