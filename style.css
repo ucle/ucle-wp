@@ -82,14 +82,6 @@ h1,h2,h3,h4,h5,h6 {
       background: white;
       overflow: hidden;
     }
-    #banner {
-      display: none;
-      max-width: 50%;
-      height: auto;
-      border: 3px solid #222;
-      border-left: none;
-      margin-top: 1.9em;
-    }
     #header h1, #header h2 { margin: 0; }
     #header h2 { display: none; }
     #header h1 {
@@ -107,7 +99,6 @@ h1,h2,h3,h4,h5,h6 {
     @media all and (min-width: 940px) {
       #header h1 { float: right; }
       #header h1 a { text-align: right; }
-      #banner { display: block; }
     }
 
   #header .searchform {

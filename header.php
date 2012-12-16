@@ -27,10 +27,6 @@
         <hgroup>
           <h1 itemprop="name" id="site-title"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="url" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri(); ?>/images/ucle.png" alt="<?php esc_attr( bloginfo( 'name' ) ); ?>" /></a></span></h1>
           <h2 itemprop="description" id="site-description"><?php bloginfo( 'description' ); ?></h2>
-          <?php $header_image = get_header_image();
-          if ( ! empty( $header_image ) ) : ?>
-            <img id="banner" src="<?php echo esc_url( $header_image ); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" />
-          <?php endif; ?>
         </hgroup>
 
         <?php get_search_form(); ?>

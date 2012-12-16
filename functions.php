@@ -34,37 +34,12 @@ function ucle_setup() {
   // This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images
   add_theme_support( 'post-thumbnails' );
 
-  // Add support for custom headers.
-  $custom_header_support = array(
-    // The height and width of our custom header.
-    'width' => 940,
-    'height' => 250,
-    // Support flexible heights.
-    'flex-height' => true,
-  );
-
-  add_theme_support( 'custom-header', $custom_header_support );
-
   // We'll be using post thumbnails for custom header images on posts and pages.
   // We want them to be the size of the header image that we just defined
   // Larger images will be auto-cropped to fit, smaller ones will be ignored. See header.php.
-  set_post_thumbnail_size( $custom_header_support['width'], $custom_header_support['height'], true );
+  set_post_thumbnail_size( 549, 366, true );
 
-  // Add Twenty Eleven's custom image sizes.
-  // Used for large feature (header) images.
-  add_image_size( 'large-feature', $custom_header_support['width'], $custom_header_support['height'], true );
-  // Used for featured posts if a large-feature doesn't exist.
-  add_image_size( 'small-feature', 500, 300 );
-
-  // Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI.
-  register_default_headers( array(
-    'ucle2012' => array(
-      'url' => '%s/images/headers/ucle2012.jpg',
-      'thumbnail_url' => '%s/images/headers/ucle2012-thumbnail.jpg',
-      /* translators: header image description */
-      'description' => 'UCLe 2012'
-    )
-  ) );
+  add_image_size( 'feature', 940, 320, true );
 }
 endif; // ucle_setup
 
