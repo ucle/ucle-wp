@@ -43,6 +43,8 @@ function ucle_setup() {
 }
 endif; // ucle_setup
 
+if ( ! isset( $content_width ) ) $content_width = 549;
+
 /**
  * Sets the post excerpt length to 60 words.
  */
