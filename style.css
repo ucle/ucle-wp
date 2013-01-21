@@ -445,23 +445,29 @@ input[type="search"] {
 .person {
   overflow: hidden;
   padding-bottom: 10px;
+  text-align: center;
 }
   .person + .person {
     padding-top: 10px;
     border-top: 1px dashed #EEE;
   }
   .person img {
-    float: left;
-    width: 200px;
-    margin-right: 20px;
+    width: 80%;
+    max-width: 200px;
   }
+  @media all and (min-width: 40em) {
+    .person img {
+      float: left;
+      margin-right: 20px;
+    }
+    .person .blurb { margin-left: 220px; }
+    .person h3 { text-align: left; }
+  }
+  .person .blurb { text-align: left; }
   .person h3 {
     margin: 0;
     font-size: 20px;
     margin-top: 10px;
-  }
-  .person p {
-    margin-left: 220px;
   }
 
 #comments {
