@@ -10,7 +10,12 @@
   </header><!-- .entry-header -->
 
   <div class="entry-content">
-    <?php the_content(); ?>
+    <?php if (strstr(the_slug(false), '-members') !== false): ?>
+      <?php echo ucle_personify(); ?>
+    <?php else: ?>
+      <?php the_content(); ?>
+    <?php endif; ?>
+
     <?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . 'Pages:' . '</span>', 'after' => '</div>' ) ); ?>
   </div><!-- .entry-content -->
   <footer class="entry-meta">

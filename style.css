@@ -442,6 +442,28 @@ input[type="search"] {
   }
   .singular footer.entry-meta { clear: both; }
 
+.person {
+  overflow: hidden;
+  padding-bottom: 10px;
+}
+  .person + .person {
+    padding-top: 10px;
+    border-top: 1px dashed #EEE;
+  }
+  .person img {
+    float: left;
+    width: 200px;
+    margin-right: 20px;
+  }
+  .person h3 {
+    margin: 0;
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  .person p {
+    margin-left: 220px;
+  }
+
 #comments {
   border-top: 1px solid #EEE;
   padding: 2em;

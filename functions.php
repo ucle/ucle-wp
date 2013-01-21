@@ -247,6 +247,34 @@ function ucle_orangify($str) {
   return preg_replace('/\*(.+)\*/', '<em>$1</em>', $str);
 }
 
+function ucle_personify() {
+  $page = apply_filters('the_content', get_the_content());
+  // Warning: Black magic ahead.
+  $members = preg_replace_callback('/<p><img .*?src="(.+?)".*?>(<br \/>|<\/p>)(\s*<p>&nbsp;<\/p>)*\s*(<p>)?(.+?)<\/p>(\s*<p>&nbsp;<\/p>)*\s*(.+?)(<p>&nbsp;<\/p>|$)/s', 'ucle_personify_single', $page);
+  return str_replace('<p>&nbsp;</p>', '', $members);
+}
+
+function ucle_personify_single($matches) {
+  $img = $matches[1];
+  $title = $matches[5];
+  $blurb = $matches[7];
+  ob_start();
+  include __DIR__ . '/partial/person.php';
+  $out = ob_get_contents();
+  ob_end_clean();
+  return $out;
+}
+
+// from http://www.tcbarrett.com/2011/09/wordpress-the_slug-get-post-slug-function/
+function the_slug($echo=true){
+  $slug = basename(get_permalink());
+  do_action('before_slug', $slug);
+  $slug = apply_filters('slug_filter', $slug);
+  if( $echo ) echo $slug;
+  do_action('after_slug', $slug);
+  return $slug;
+}
+
 function ucle_posts($header) {
   require __DIR__ . '/partial/posts.php';
 }
