@@ -243,6 +243,10 @@ function ucle_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'ucle_body_classes' );
 
+function ucle_orangify($str) {
+  return preg_replace('/\*(.+)\*/', '<em>$1</em>', $str);
+}
+
 function ucle_posts($header) {
   require __DIR__ . '/partial/posts.php';
 }

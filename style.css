@@ -112,7 +112,17 @@ input[type="search"] {
       overflow: hidden;
     }
     #header h1, #header h2 { margin: 0; }
-    #header h2 { display: none; }
+    #header h2 {
+      position: absolute;
+      bottom: 60px;
+      left: 20px;
+      font-size: 28px;
+      display: none;
+    }
+      #header h2 em { color: #FA862F; font-style: normal; }
+    @media all and (min-width: 940px) {
+      #header h2 { display: block; }
+    }
     #header h1 {
       width: 40%;
     }

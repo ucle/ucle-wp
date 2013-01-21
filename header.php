@@ -26,7 +26,7 @@
       <header id="header" role="banner">
         <hgroup>
           <h1 itemprop="name" id="site-title"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="url" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri(); ?>/images/ucle.png" alt="<?php esc_attr( bloginfo( 'name' ) ); ?>" /></a></span></h1>
-          <h2 itemprop="description" id="site-description"><?php bloginfo( 'description' ); ?></h2>
+          <h2 itemprop="description" id="site-description"><?php echo ucle_orangify ( get_bloginfo( 'description' ) ); ?></h2>
         </hgroup>
 
         <?php get_search_form(); ?>
