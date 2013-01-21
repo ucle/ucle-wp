@@ -31,7 +31,7 @@
     </div><!-- .entry-content -->
     <?php endif; ?>
 
-    <footer class="entry-meta">
+    <footer class="entry-meta" role="contentinfo">
       <?php ucle_entry_meta(); ?>
       <?php edit_post_link( 'Edit', '<span class="edit-link">', '</span>' ); ?>
       <?php if ( is_singular() && get_the_author_meta( 'description' ) && is_multi_author() ) : // If a user has filled out their description and this is a multi-author blog, show a bio on their entries. ?>
