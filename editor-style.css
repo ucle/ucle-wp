@@ -33,7 +33,7 @@ a:hover, a:focus {
     margin: 1em auto;
   }
   .alignnone {
-    padding: .5em;
+    margin: .5em;
   }
   .alignleft {
     float: left;
