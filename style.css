@@ -661,7 +661,7 @@ input[type="search"] {
   .widget h3 {
     margin-top: 0;
     margin-bottom: 0;
-    padding: 1em 1em 0;
+    padding: 1em .8em 0;
     text-transform: uppercase;
   }
   .widget form {
@@ -685,3 +685,24 @@ input[type="search"] {
 .widget:nth-child(2n) {
   background: #FAFAFA;
 }
+
+.widget_twitter ul {
+  list-style-type: none;
+  margin: 0;
+  padding: .5em 1em;
+}
+  .widget_twitter li {
+    padding: .5em 0;
+  }
+    .widget_twitter li + li {
+      border-top: 1px dashed #EEE;
+    }
+  .widget_twitter .follow-button { margin: 0 10px 10px 25px; }
+  .widget_twitter .entry-meta {
+    display: block;
+    font-size: 80%;
+    text-align: right;
+  }
+    .widget_twitter .entry-meta a {
+      color: #999;
+    }
