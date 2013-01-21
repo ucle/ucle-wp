@@ -572,25 +572,6 @@ input[type="search"] {
       border-right: 1px solid #EEE;
       z-index: 50;
     }
-    .wpcf7-not-valid-tip-no-ajax {
-      padding-top: .5em;
-    }
-    .wpcf7-not-valid-tip {
-      height: 30px;
-      line-height: 30px;
-      padding: 0 !important;
-      background: #FAFAFA !important;
-      border: 1px solid #EEE !important;
-      color: #D44;
-    }
-    .wpcf7-response-output {
-      padding: 1em !important;
-      color: #444;
-      font-size: .85em;
-    }
-    .wpcf7-validation-errors {
-      border: 1px solid #D44 !important;
-    }
     form input[type="text"],
     form input[type="email"] {
       width: 100%;
