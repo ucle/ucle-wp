@@ -279,3 +279,10 @@ function the_slug($echo=true){
 function ucle_posts($header) {
   require __DIR__ . '/partial/posts.php';
 }
+
+// Finally, get rid of stuff
+remove_action('wp_head', 'feed_links', 2);
+remove_action('wp_head', 'feed_links_extra', 3);
+remove_action('wp_head', 'wlwmanifest_link');
+remove_action('wp_head', 'rsd_link');
+remove_action('wp_head', 'wp_generator');
