@@ -458,13 +458,32 @@ input[type="search"] {
     padding-top: 10px;
     border-top: 1px dashed #EEE;
   }
-  .person img {
+  .person .avatar {
     width: 80%;
     max-width: 200px;
+    margin: 0 auto;
+    overflow: hidden;
   }
-  @media all and (min-width: 40em) {
-    .person img {
+    .person .avatar img {
+      width: 100%;
+      margin: 0;
+    }
+    .person .boxer {
+      width: 200%;
+      white-space: nowrap;
+      letter-spacing: -4px;
+      word-spacing: -4px;
+    }
+    .person .boxer img {
+      width: 50%;
+      display: inline-block;
+      vertical-align: top;
+    }
+    .person .avatar:hover .boxer { margin-left: -100%; }
+  @media all and (min-width: 45em) {
+    .person .avatar {
       float: left;
+      margin: 0;
       margin-right: 20px;
     }
     .person .blurb { margin-left: 220px; }

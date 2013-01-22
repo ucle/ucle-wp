@@ -250,14 +250,15 @@ function ucle_orangify($str) {
 function ucle_personify() {
   $page = apply_filters('the_content', get_the_content());
   // Warning: Black magic ahead.
-  $members = preg_replace_callback('/<p><img .*?src="(.+?)".*?>(<br \/>|<\/p>)(\s*<p>&nbsp;<\/p>)*\s*(<p>)?(.+?)<\/p>(\s*<p>&nbsp;<\/p>)*\s*(.+?)(<p>&nbsp;<\/p>|$)/s', 'ucle_personify_single', $page);
+  $members = preg_replace_callback('/<p><img .*?alt="(https?:\/\/.+?)?".*?src="(.+?)".*?>(<br \/>|<\/p>)(\s*<p>&nbsp;<\/p>)*\s*(<p>)?(.+?)<\/p>(\s*<p>&nbsp;<\/p>)*\s*(.+?)(<p>&nbsp;<\/p>|$)/s', 'ucle_personify_single', $page);
   return str_replace('<p>&nbsp;</p>', '', $members);
 }
 
 function ucle_personify_single($matches) {
-  $img = $matches[1];
-  $title = $matches[5];
-  $blurb = $matches[7];
+  $img = $matches[2];
+  $alt = $matches[1];
+  $title = $matches[6];
+  $blurb = $matches[8];
   ob_start();
   include __DIR__ . '/partial/person.php';
   $out = ob_get_contents();
