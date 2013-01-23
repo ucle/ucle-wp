@@ -119,12 +119,13 @@ input[type="search"] {
     #header h1, #header h2 { margin: 0; }
     #header h2 {
       position: absolute;
-      bottom: 60px;
+      bottom: 63px;
       left: 20px;
-      font-size: 28px;
+      z-index: 5;
+      font-size: 35px;
       display: none;
     }
-      #header h2 em { color: #FA862F; font-style: normal; }
+      #header h2 em { color: #E2752E; font-style: normal; }
     @media all and (min-width: 940px) {
       #header h2 { display: block; }
     }
