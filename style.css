@@ -474,6 +474,7 @@ input[type="search"] {
       white-space: nowrap;
       letter-spacing: -4px;
       word-spacing: -4px;
+      transition: margin-left .2s ease-in-out;
     }
     .person .boxer img {
       width: 50%;
