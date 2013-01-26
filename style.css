@@ -464,8 +464,10 @@ input[type="search"] {
     max-width: 200px;
     margin: 0 auto;
     overflow: hidden;
+    border: 1px solid #AAA;
   }
     .person .avatar img {
+      vertical-align: top;
       width: 100%;
       margin: 0;
     }
