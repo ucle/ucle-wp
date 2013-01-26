@@ -251,7 +251,7 @@ function ucle_orangify($str) {
 function ucle_personify() {
   $page = apply_filters('the_content', get_the_content());
   // Warning: Black magic ahead.
-  $members = preg_replace_callback('/<p><img .*?alt="(https?:\/\/.+?)?".*?src="(.+?)".*?>(<br \/>|<\/p>)(\s*<p>&nbsp;<\/p>)*\s*(<p>)?(.+?)<\/p>(\s*<p>&nbsp;<\/p>)*\s*(.+?)(<p>&nbsp;<\/p>|$)/s', 'ucle_personify_single', $page);
+  $members = preg_replace_callback('/<p><img [^>]*alt="(https?:\/\/[^"]+)?.*?".*?src="(.+?)".*?>(<br \/>|<\/p>)(\s*<p>&nbsp;<\/p>)*\s*(<p>)?(.+?)<\/p>(\s*<p>&nbsp;<\/p>)*\s*(.+?)(<p>&nbsp;<\/p>|$)/s', 'ucle_personify_single', $page);
   return str_replace('<p>&nbsp;</p>', '', $members);
 }
 
