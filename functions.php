@@ -40,6 +40,7 @@ function ucle_setup() {
   set_post_thumbnail_size( 549, 366, true );
 
   add_image_size( 'feature', 940, 320, true );
+  add_image_size( 'staff', 200, 200, true );
 }
 endif; // ucle_setup
 
