@@ -8,8 +8,9 @@
 <html <?php language_attributes(); ?>>
   <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
-    <meta name="viewport" content="width=device-width" />
     <title><?php wp_title( '|', true, 'right' ); ?></title>
+    <meta name="description" content="UCL Entrepreneurs is a society for students interested in startups and entrepreneurship who need guidance or resources to develop their ideas" />
+    <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/images/favicon.png" />
     <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
     <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/editor-style.css" />
